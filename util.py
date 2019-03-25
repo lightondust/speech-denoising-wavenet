@@ -156,7 +156,7 @@ def get_subdict_from_dict(keys, dictionary):
 def pretty_json_dump(values, file_path=None):
 
     if file_path is None:
-        print json.dumps(values, sort_keys=True, indent=4, separators=(',', ': '))
+        print(json.dumps(values, sort_keys=True, indent=4, separators=(',', ': ')))
     else:
         json.dump(values, open(file_path, 'w'), sort_keys=True, indent=4, separators=(',', ': '))
 
@@ -212,7 +212,8 @@ def get_subsequence_with_speech_indices(full_sequence):
     chunk_length = 800
 
     chunks_energies = []
-    for i in xrange(0, len(signal_magnitude), chunk_length):
+    for i in range(0, len(signal_magnitude), chunk_length):
+    # for i in xrange(0, len(signal_magnitude), chunk_length):
         chunks_energies.append(np.mean(signal_magnitude[i:i + chunk_length]))
 
     threshold = np.max(chunks_energies) * .1
