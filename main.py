@@ -160,8 +160,8 @@ def main():
     cla = get_command_line_arguments()
     config = load_config(cla.config)
 
-    import pdb;
-    pdb.set_trace()
+    # import pdb;
+    # pdb.set_trace()
 
     if cla.mode == 'training':
         training(config, cla)
